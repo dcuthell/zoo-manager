@@ -1,4 +1,4 @@
-export class Keg {
+export class Animal {
   public amount : number = 1984;
   constructor(public name: string, public description: string, public brand: string, public price: number, public abv: number, public style: string) { }
 

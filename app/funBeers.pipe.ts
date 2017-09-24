@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Keg} from './keg.model';
+import {Animal} from './animal.model';
 
 
 @Pipe({
@@ -11,8 +11,8 @@ pure: false
 
 export class FunBeerPipe implements PipeTransform {
 
-  transform(input: Keg[], inputVal) {
-    let output: Keg[] = [];
+  transform(input: Animal[], inputVal) {
+    let output: Animal[] = [];
     if(inputVal > 0){
       for (var i = 0; i < input.length; i++) {
         if (input[i].abv >= inputVal) {

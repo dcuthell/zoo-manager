@@ -1,8 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 @Component({
-  selector: 'new-keg',
+  selector: 'new-animal',
   template: `<div class="hidden-pane form-group well" id='hidden'><label>Name:</label>
   <input #newName class="form-control">
   <label>Description:</label>
@@ -22,16 +22,16 @@ import { Keg } from './keg.model';
   `
 })
 
-export class NewKegComponent {
-  @Output() newKegSender = new EventEmitter();
+export class NewAnimalComponent {
+  @Output() newAnimalSender = new EventEmitter();
 
   submitForm(name: string, description: string, brand: string, price: number, abv: number, style:string) {
     let trimString = name.trim();
     if(trimString.length <= 0){
-      alert("Please fill out all fields for new keg");
+      alert("Please fill out all fields for new animal");
     }else{
-      let newKegToAdd: Keg = new Keg(name, description, brand, price, abv, style );
-      this.newKegSender.emit(newKegToAdd);
+      let newAnimalToAdd: Animal = new Animal(name, description, brand, price, abv, style );
+      this.newAnimalSender.emit(newAnimalToAdd);
     }
 
    }
