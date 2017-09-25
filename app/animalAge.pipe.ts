@@ -3,19 +3,19 @@ import {Animal} from './animal.model';
 
 
 @Pipe({
-  name: "funBeers",
+  name: "animalAge",
 pure: false
 })
 
 
 
-export class FunBeerPipe implements PipeTransform {
+export class AnimalAgePipe implements PipeTransform {
 
   transform(input: Animal[], inputVal) {
     let output: Animal[] = [];
     if(inputVal > 0){
       for (var i = 0; i < input.length; i++) {
-        if (input[i].abv >= inputVal) {
+        if (input[i].age >= inputVal) {
           output.push(input[i]);
         }
       }

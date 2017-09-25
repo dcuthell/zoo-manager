@@ -12,6 +12,21 @@ h1{
 	display: block;
     margin: auto;
 }
+
+.detail-form{
+	position:fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	opacity: 0;
+	&:target{
+ 	 visibility: visible;
+    opacity: 1;
+ 	 position: relative;
+  }
+}
 .hidden-pane{
 position:fixed;
 top: 0;
@@ -20,12 +35,11 @@ left: 0;
 right: 0;
 visibility: hidden;
 opacity: 0;
-
- &:target{
-	 visibility: visible;
-   opacity: 1;
-	 position: relative;
- }
+&:target{
+ visibility: visible;
+ opacity: 1;
+ position: relative;
+}
 }
 .clicker:active{
 	visibility: hidden;
