@@ -1,11 +1,9 @@
 {
-  "name": "tap-list",
+  "name": "zoo-manager",
   "description": "",
   "main": "",
   "authors": [
-    "David",
-    "Evan",
-    "Kheifer"
+    "David Cuthell",
   ],
   "license": "ISC",
   "homepage": "",

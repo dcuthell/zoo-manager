@@ -10,8 +10,11 @@ import {NewAnimalComponent} from './new-animal.component';
     <h1>{{currentFocus}}</h1>
     <h1>Managing the zoo for the day of: {{month}}/{{day}}/{{year}}</h1>
     <hr>
-    <animal-list [childAnimalList]="masterAnimalList"></animal-list>
-    <a class="btn btn-info" href="#hidden" (clickSender)="editAnimal($event)">Add a new beer</a>
+    <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
+    <a class="btn btn-info" href="#hidden">Add a new beer</a>
+    <hr>
+    <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+    <hr>
     <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   </div>
     `
@@ -23,13 +26,14 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
+  selectedAnimal = null;
 
   masterAnimalList: Animal[] = [
     new Animal('Bobby','Elephant', 3, "Male", 4, 'Elephant Rotunda', 'Vegetarian', 'Butt-scratches', 'Hot Weather'),
     new Animal('Jack','Elephant', 3, "Male", 6, 'Elephant Rotunda', 'Vegetarian', 'Waterfalls', 'Thunderstorms'),
     new Animal('Teddy','Elephant', 3, "Male", 1, 'Elephant Rotunda', 'Vegetarian', 'Beach Balls', 'Loud noises')
   ]
-  selectedAnimal: Animal = null;
+
 
   addAnimal(newAnimalFromChild: Animal) {
     this.masterAnimalList.push(newAnimalFromChild);
@@ -38,6 +42,12 @@ export class AppComponent {
   editAnimal(clickedAnimal) {
     this.selectedAnimal = clickedAnimal;
   }
+
+  finishedEditing(){
+    this.selectedAnimal = null;
+  }
+
+
 
 
 }

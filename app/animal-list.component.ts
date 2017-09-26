@@ -17,12 +17,14 @@ import{ Animal } from './animal.model';
           <li>{{currentAnimal.diet}}</li>
           <li>{{currentAnimal.likes}}</li>
           <li>{{currentAnimal.dislikes}}</li>
-          <button (click)="editAnimalButtonClick(currentAnimal)" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-pencil" ></span> Edit
-          </button>
+          <a href="#some-details">
+            <button type="button" (click)="editButtonHasBeenClicked(currentAnimal)" class="btn btn-default">
+              <a class="glyphicon glyphicon-pencil" href="#some-details" >Edit</a>
+            </button>
+          </a>
           <a class="btn btn-info" href="#some-details"><span class="glyphicon glyphicon-pencil" ></span>Edit Animal</a>
           <br>
-          <div class="form-group well detail-form"  id="some-details">
+          <div class="form-group well detail-form"  id="some-details2">
             <label>Name:</label>
             <input [(ngModel)]="currentAnimal.name" class="form-control">
             <label>Species:</label>
