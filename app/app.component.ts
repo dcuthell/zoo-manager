@@ -7,6 +7,7 @@ import {NewAnimalComponent} from './new-animal.component';
   selector: 'app-root',
   template: `
   <div class="container">
+    <img src="https://101clipart.com/wp-content/uploads/05/Clip%20Art%20Of%20Zoo%20Animals%2002.jpg" alt="zoo graphic" aria-hidden id="zoo-graphic">
     <h1>{{currentFocus}}</h1>
     <h1>Managing the zoo for the day of: {{month}}/{{day}}/{{year}}</h1>
     <hr>

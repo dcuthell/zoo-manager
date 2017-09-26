@@ -13,6 +13,7 @@ h1{
     margin: auto;
 }
 
+
 .detail-form{
 	position:fixed;
 	top: 0;
@@ -44,7 +45,8 @@ opacity: 0;
 .clicker:active{
 	visibility: hidden;
 }
-.keg-image{
-	width: 140px;
-	height: 100px;
+
+#zoo-graphic {
+	display: block;
+	margin: auto;
 }

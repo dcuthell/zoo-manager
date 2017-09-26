@@ -22,7 +22,6 @@ import{ Animal } from './animal.model';
               <a class="glyphicon glyphicon-pencil" href="#some-details" >Edit</a>
             </button>
           </a>
-          <a class="btn btn-info" href="#some-details"><span class="glyphicon glyphicon-pencil" ></span>Edit Animal</a>
           <br>
           <div class="form-group well detail-form"  id="some-details2">
             <label>Name:</label>
