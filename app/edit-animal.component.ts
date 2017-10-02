@@ -4,10 +4,8 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'edit-animal',
   template: `
-    <div *ngIf="childSelectedAnimal">
-      <h3>{{childSelectedAnimal.name}}</h3>
-      <hr>
-      <h3>Edit Animal</h3>
+    <div class="well" *ngIf="childSelectedAnimal">
+      <h3>Edit "{{childSelectedAnimal.name}}"</h3>
       <div class="form-group well"  id="some-details">
         <label>Name:</label>
         <input [(ngModel)]="childSelectedAnimal.name" class="form-control">
@@ -28,7 +26,7 @@ import { Animal } from './animal.model';
         <label>Dislikes:</label>
         <input [(ngModel)]="childSelectedAnimal.dislikes" class="form-control">
       </div>
-      <a href= "#"><button (click)="doneButtonClicked()">Done</button></a>
+      <a href= "#"><button class="btn btn-primary"(click)="doneButtonClicked()">Done</button></a>
     </div>
   `
 })

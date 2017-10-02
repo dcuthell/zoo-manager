@@ -5,6 +5,8 @@ import{ Animal } from './animal.model';
   selector:'animal-list',
   template:`
   <div class="well">
+    <h3>Add a new Animal</h3>
+    <button class="btn btn-success" (click)="addButtonHasBeenClicked()">Add Animal</button>
     <h3>Make an age selection</h3>
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-default" value="allAges" (click)="onChange($event.target.value)">All Ages</button>
@@ -24,8 +26,8 @@ import{ Animal } from './animal.model';
           <li>Likes: {{currentAnimal.likes}}</li>
           <li>Dislikes: {{currentAnimal.dislikes}}</li>
           <a href="#some-details">
-            <button type="button" (click)="editButtonHasBeenClicked(currentAnimal)" class="btn btn-default">
-              <a class="glyphicon glyphicon-pencil" href="#some-details" >Edit</a>
+            <button type="button" (click)="editButtonHasBeenClicked(currentAnimal)" class="btn btn-warning">Edit
+              <span class="glyphicon glyphicon-pencil"></span>
             </button>
           </a>
         </ul>
@@ -38,6 +40,7 @@ import{ Animal } from './animal.model';
 export class AnimalListComponent{
   @Input() childAnimalList: Animal[];
   @Output() clickSender = new EventEmitter();
+  @Output() addClickSender = new EventEmitter();
 
   ageFilter: string = "allAges";
 
@@ -45,8 +48,11 @@ export class AnimalListComponent{
     this.clickSender.emit(animalToEdit);
   }
 
+  addButtonHasBeenClicked(){
+    this.addClickSender.emit();
+  }
+
   onChange(optionFromMenu){
-    alert(optionFromMenu);
     this.ageFilter = optionFromMenu;
   }
   animalAgePipeInput: number = 8;
